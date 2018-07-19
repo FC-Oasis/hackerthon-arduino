@@ -33,6 +33,6 @@ void loop() {
   lcd.print("Temp: "); lcd.print(t); lcd.print(" C");
 
   // 시리얼 통신 표시
-  Serial.print("Humidity: "); Serial.print(h); Serial.print(" %\t");
-  Serial.print("Temperature: "); Serial.print(t); Serial.println(" C");
+  Serial.print("{\"Humidity\": \""); Serial.print(h); Serial.print("\", ");
+  Serial.print("\"Temperature\": \""); Serial.print(t); Serial.println("\"}");
 }
