@@ -43,16 +43,16 @@ while True:
                 csrfmiddlewaretoken=csrf_token
             )
             response = client.post(URL, data=sensor_data, headers=dict(Referer=URL))
-            print(f'아두이노 데이터 {URL} 전송 완료\n')
+            print(f'아두이노 데이터 {URL} 전송: {response}\n')
 
     except serial.serialutil.SerialException:
-        print('아두이노가 연결되어 있지 않습니다.')
+        print('아두이노가 연결되어 있지 않습니다.\n')
         break
 
     except requests.exceptions.ConnectionError:
-        print('인터넷 전송이 불가능합니다.')
+        print('인터넷 전송이 불가능합니다.\n')
         continue
 
     except KeyboardInterrupt:
-        print('아두이노 시리얼 통신을 중단합니다.')
+        print('아두이노 시리얼 통신을 중단합니다.\n')
         break
